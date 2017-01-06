@@ -9,12 +9,6 @@
 import UIKit
 import Speech
 
-enum SpeechStatus {
-    case ready
-    case recognizing
-    case unavailable
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var microphoneButton: UIButton!
@@ -40,7 +34,6 @@ class ViewController: UIViewController {
     }
 
     func askSpeechPermission() {
-        // The closure is not returned on the main thread, so we have to switch to it to update the UI.
         SFSpeechRecognizer.requestAuthorization { status in
             OperationQueue.main.addOperation {
                 switch status {
@@ -53,7 +46,7 @@ class ViewController: UIViewController {
         }
     }
 
-    private func recognizeFile(url: URL) {
+    func recognizeFile(url: URL) {
         guard let recognizer = SFSpeechRecognizer(), recognizer.isAvailable else {
             return
         }
@@ -65,10 +58,23 @@ class ViewController: UIViewController {
             }
             self.transcriptionTextView.text = result.bestTranscription.formattedString
             if result.isFinal {
-                print(result.bestTranscription.formattedString)
+                self.searchFlight(number: result.bestTranscription.formattedString)
             } else if let error = error {
                 print(error)
             }
+        }
+    }
+}
+
+// MARK: - UI Management
+
+extension ViewController {
+
+    func searchFlight(number: String) {
+        if let flight = FlightsDataSource.searchFlight(number: number) {
+            transcriptionTextView.text = "\(number)\n\(flight.status)"
+        } else {
+            transcriptionTextView.text = "No flight \(number) found 😭"
         }
     }
 
@@ -78,3 +84,26 @@ class ViewController: UIViewController {
         recognizeFile(url: preRecordedAudioURL)
     }
 }
+
+
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return FlightsDataSource.flights.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FlightCell", for: indexPath)
+        let flight = FlightsDataSource.flights[indexPath.row]
+        cell.textLabel?.text = flight.number
+        cell.detailTextLabel?.text = flight.status
+        return cell
+    }
+}
+

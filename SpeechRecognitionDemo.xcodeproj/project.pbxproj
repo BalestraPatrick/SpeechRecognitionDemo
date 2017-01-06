@@ -14,6 +14,8 @@
 		AEB1E82D1E1FAB4000D2998D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E82B1E1FAB4000D2998D /* LaunchScreen.storyboard */; };
 		AEB1E83D1E1FB8D200D2998D /* LX40.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E83C1E1FB8D200D2998D /* LX40.m4a */; };
 		AEB1E8411E1FC05900D2998D /* UIViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1E8401E1FC05900D2998D /* UIViewController+Style.swift */; };
+		AEB1E8431E1FD11000D2998D /* SpeechStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1E8421E1FD11000D2998D /* SpeechStatus.swift */; };
+		AEB1E8451E1FD14C00D2998D /* FlightsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1E8441E1FD14C00D2998D /* FlightsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AEB1E82E1E1FAB4000D2998D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB1E83C1E1FB8D200D2998D /* LX40.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = LX40.m4a; sourceTree = "<group>"; };
 		AEB1E8401E1FC05900D2998D /* UIViewController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Style.swift"; sourceTree = "<group>"; };
+		AEB1E8421E1FD11000D2998D /* SpeechStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechStatus.swift; sourceTree = "<group>"; };
+		AEB1E8441E1FD14C00D2998D /* FlightsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				AEB1E8221E1FAB4000D2998D /* AppDelegate.swift */,
 				AEB1E8241E1FAB4000D2998D /* ViewController.swift */,
+				AEB1E8421E1FD11000D2998D /* SpeechStatus.swift */,
+				AEB1E8441E1FD14C00D2998D /* FlightsDataSource.swift */,
 				AEB1E8401E1FC05900D2998D /* UIViewController+Style.swift */,
 				AEB1E8261E1FAB4000D2998D /* Main.storyboard */,
 				AEB1E8291E1FAB4000D2998D /* Assets.xcassets */,
@@ -145,7 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB1E8411E1FC05900D2998D /* UIViewController+Style.swift in Sources */,
+				AEB1E8431E1FD11000D2998D /* SpeechStatus.swift in Sources */,
 				AEB1E8251E1FAB4000D2998D /* ViewController.swift in Sources */,
+				AEB1E8451E1FD14C00D2998D /* FlightsDataSource.swift in Sources */,
 				AEB1E8231E1FAB4000D2998D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
