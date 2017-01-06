@@ -12,7 +12,6 @@
 		AEB1E8281E1FAB4000D2998D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E8261E1FAB4000D2998D /* Main.storyboard */; };
 		AEB1E82A1E1FAB4000D2998D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E8291E1FAB4000D2998D /* Assets.xcassets */; };
 		AEB1E82D1E1FAB4000D2998D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E82B1E1FAB4000D2998D /* LaunchScreen.storyboard */; };
-		AEB1E8391E1FB7D700D2998D /* LX1234.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E8381E1FB7D700D2998D /* LX1234.m4a */; };
 		AEB1E83D1E1FB8D200D2998D /* LX40.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEB1E83C1E1FB8D200D2998D /* LX40.m4a */; };
 		AEB1E8411E1FC05900D2998D /* UIViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1E8401E1FC05900D2998D /* UIViewController+Style.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		AEB1E8291E1FAB4000D2998D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB1E82C1E1FAB4000D2998D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB1E82E1E1FAB4000D2998D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEB1E8381E1FB7D700D2998D /* LX1234.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = LX1234.m4a; sourceTree = "<group>"; };
 		AEB1E83C1E1FB8D200D2998D /* LX40.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = LX40.m4a; sourceTree = "<group>"; };
 		AEB1E8401E1FC05900D2998D /* UIViewController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +65,6 @@
 				AEB1E8291E1FAB4000D2998D /* Assets.xcassets */,
 				AEB1E82B1E1FAB4000D2998D /* LaunchScreen.storyboard */,
 				AEB1E82E1E1FAB4000D2998D /* Info.plist */,
-				AEB1E8381E1FB7D700D2998D /* LX1234.m4a */,
 				AEB1E83C1E1FB8D200D2998D /* LX40.m4a */,
 			);
 			path = SpeechRecognitionDemo;
@@ -133,7 +130,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB1E8391E1FB7D700D2998D /* LX1234.m4a in Resources */,
 				AEB1E82D1E1FAB4000D2998D /* LaunchScreen.storyboard in Resources */,
 				AEB1E83D1E1FB8D200D2998D /* LX40.m4a in Resources */,
 				AEB1E82A1E1FAB4000D2998D /* Assets.xcassets in Resources */,

@@ -9,6 +9,12 @@
 import UIKit
 import Speech
 
+enum SpeechStatus {
+    case ready
+    case recognizing
+    case unavailable
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var microphoneButton: UIButton!
@@ -23,21 +29,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         applyStyle()
 
-        if SFSpeechRecognizer.authorizationStatus() == .notDetermined {
+        switch SFSpeechRecognizer.authorizationStatus() {
+        case .notDetermined:
             askSpeechPermission()
-        } else {
-            self.setUI(status: SFSpeechRecognizer.authorizationStatus())
-        }
-
-        recognizeFile(url: preRecordedAudioURL)
-    }
-
-    func setUI(status: SFSpeechRecognizerAuthorizationStatus) {
-        switch status {
         case .authorized:
-            microphoneButton.setImage(#imageLiteral(resourceName: "available"), for: .normal)
+            self.setUI(status: .ready)
         default:
-            microphoneButton.setImage(#imageLiteral(resourceName: "unavailable"), for: .normal)
+            break
         }
     }
 
@@ -45,7 +43,12 @@ class ViewController: UIViewController {
         // The closure is not returned on the main thread, so we have to switch to it to update the UI.
         SFSpeechRecognizer.requestAuthorization { status in
             OperationQueue.main.addOperation {
-                self.setUI(status: status)
+                switch status {
+                case .authorized:
+                    self.setUI(status: .ready)
+                default:
+                    self.setUI(status: .unavailable)
+                }
             }
         }
     }
@@ -57,7 +60,11 @@ class ViewController: UIViewController {
 
         let request = SFSpeechURLRecognitionRequest(url: url)
         recognizer.recognitionTask(with: request) { result, error in
-            if let result = result {
+            guard let result = result else {
+                return
+            }
+            self.transcriptionTextView.text = result.bestTranscription.formattedString
+            if result.isFinal {
                 print(result.bestTranscription.formattedString)
             } else if let error = error {
                 print(error)
@@ -68,5 +75,6 @@ class ViewController: UIViewController {
     // MARK: IBActions
 
     @IBAction func microphonePressed(_ sender: Any) {
+        recognizeFile(url: preRecordedAudioURL)
     }
 }

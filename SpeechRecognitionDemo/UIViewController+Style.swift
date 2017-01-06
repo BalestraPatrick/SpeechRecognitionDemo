@@ -16,4 +16,15 @@ extension ViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barStyle = .black
     }
+
+    func setUI(status: SpeechStatus) {
+        switch status {
+        case .ready:
+            microphoneButton.setImage(#imageLiteral(resourceName: "available"), for: .normal)
+        case .recognizing:
+            microphoneButton.setImage(#imageLiteral(resourceName: "stop"), for: .normal)
+        case .unavailable:
+            microphoneButton.setImage(#imageLiteral(resourceName: "unavailable"), for: .normal)
+        }
+    }
 }
