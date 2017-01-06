@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6YK-Mn-7lc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flights from ZRH-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechRecognitionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-lB-7Ko">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8CE-1M-4pI">
+                                        <rect key="frame" x="150" y="10" width="215" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Tap the button and say your flight number ✈️
+LX40</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" flightNumber="YES"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-Tk-zl9">
+                                        <rect key="frame" x="50" y="35" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="DRq-4n-Rsh"/>
+                                            <constraint firstAttribute="height" constant="50" id="xk4-jq-Kum"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="microphonePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yhb-fX-4or"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.76885308159722221" blue="0.74212399148055552" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8CE-1M-4pI" firstAttribute="leading" secondItem="aLe-Tk-zl9" secondAttribute="trailing" constant="50" id="0pD-Kz-0h7"/>
+                                    <constraint firstAttribute="trailing" secondItem="8CE-1M-4pI" secondAttribute="trailing" constant="10" id="GPT-MS-rTm"/>
+                                    <constraint firstAttribute="bottom" secondItem="8CE-1M-4pI" secondAttribute="bottom" constant="10" id="XHf-HE-Wba"/>
+                                    <constraint firstItem="8CE-1M-4pI" firstAttribute="top" secondItem="5dQ-lB-7Ko" secondAttribute="top" constant="10" id="gFJ-lP-cLn"/>
+                                    <constraint firstAttribute="height" constant="120" id="mW1-Y9-HVh"/>
+                                    <constraint firstItem="aLe-Tk-zl9" firstAttribute="centerY" secondItem="5dQ-lB-7Ko" secondAttribute="centerY" id="xs8-NE-zvW"/>
+                                    <constraint firstItem="aLe-Tk-zl9" firstAttribute="leading" secondItem="5dQ-lB-7Ko" secondAttribute="leading" constant="50" id="yep-Eb-fPX"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-U5-DCc">
+                                <rect key="frame" x="0.0" y="184" width="375" height="483"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h49-6H-XZF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h49-6H-XZF" id="C8p-Pa-Eo5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p9L-U5-DCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFN-A7-yd9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p9L-U5-DCc" secondAttribute="bottom" id="Fjm-vP-aAa"/>
+                            <constraint firstItem="5dQ-lB-7Ko" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ncc-h1-KdT"/>
+                            <constraint firstItem="5dQ-lB-7Ko" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="V3O-In-YiF"/>
+                            <constraint firstAttribute="trailing" secondItem="p9L-U5-DCc" secondAttribute="trailing" id="XOe-H9-uNB"/>
+                            <constraint firstItem="p9L-U5-DCc" firstAttribute="top" secondItem="5dQ-lB-7Ko" secondAttribute="bottom" id="YHk-Bi-1vm"/>
+                            <constraint firstAttribute="trailing" secondItem="5dQ-lB-7Ko" secondAttribute="trailing" id="k2Z-jG-gMD"/>
+                            <constraint firstItem="p9L-U5-DCc" firstAttribute="top" secondItem="5dQ-lB-7Ko" secondAttribute="bottom" id="woW-af-X6m"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Flights from ZRH" id="7rr-sV-SGC"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="microphoneButton" destination="aLe-Tk-zl9" id="l3K-ok-GNt"/>
+                        <outlet property="tableView" destination="p9L-U5-DCc" id="5oW-0G-aAw"/>
+                        <outlet property="transcriptionTextView" destination="8CE-1M-4pI" id="Qo8-dP-nVs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2420" y="601.34932533733138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MGi-u5-nT7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6YK-Mn-7lc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uFB-VW-JAB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bho-dX-5NP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfY-u3-qCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.5999999999999" y="602.24887556221893"/>
         </scene>
     </scenes>
 </document>
