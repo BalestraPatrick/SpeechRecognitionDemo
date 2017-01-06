@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flights from ZRH-->
+        <!--Flights Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +88,7 @@ LX40</string>
                             <constraint firstItem="p9L-U5-DCc" firstAttribute="top" secondItem="5dQ-lB-7Ko" secondAttribute="bottom" id="woW-af-X6m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flights from ZRH" id="7rr-sV-SGC"/>
+                    <navigationItem key="navigationItem" title="Flights Tracker" id="7rr-sV-SGC"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="microphoneButton" destination="aLe-Tk-zl9" id="l3K-ok-GNt"/>
