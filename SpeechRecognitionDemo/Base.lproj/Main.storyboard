@@ -35,14 +35,14 @@ LX40</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" flightNumber="YES"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-Tk-zl9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-Tk-zl9">
                                         <rect key="frame" x="50" y="35" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="DRq-4n-Rsh"/>
                                             <constraint firstAttribute="height" constant="50" id="xk4-jq-Kum"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" image="available">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -111,9 +111,9 @@ LX40</string>
                     <navigationItem key="navigationItem" title="Flights Tracker" id="7rr-sV-SGC"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="flightTextView" destination="8CE-1M-4pI" id="rA1-R2-7S9"/>
                         <outlet property="microphoneButton" destination="aLe-Tk-zl9" id="l3K-ok-GNt"/>
                         <outlet property="tableView" destination="p9L-U5-DCc" id="5oW-0G-aAw"/>
-                        <outlet property="transcriptionTextView" destination="8CE-1M-4pI" id="Qo8-dP-nVs"/>
                     </connections>
                 </viewController>
             </objects>
@@ -139,4 +139,7 @@ LX40</string>
             <point key="canvasLocation" x="1597.5999999999999" y="602.24887556221893"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="available" width="16" height="16"/>
+    </resources>
 </document>

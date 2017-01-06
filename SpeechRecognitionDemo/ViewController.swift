@@ -12,7 +12,7 @@ import Speech
 class ViewController: UIViewController {
 
     @IBOutlet weak var microphoneButton: UIButton!
-    @IBOutlet weak var transcriptionTextView: UITextView!
+    @IBOutlet weak var flightTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
 
     var preRecordedAudioURL: URL = {
@@ -23,47 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         applyStyle()
 
-        switch SFSpeechRecognizer.authorizationStatus() {
-        case .notDetermined:
-            askSpeechPermission()
-        case .authorized:
-            self.setUI(status: .ready)
-        default:
-            break
-        }
     }
 
-    func askSpeechPermission() {
-        SFSpeechRecognizer.requestAuthorization { status in
-            OperationQueue.main.addOperation {
-                switch status {
-                case .authorized:
-                    self.setUI(status: .ready)
-                default:
-                    self.setUI(status: .unavailable)
-                }
-            }
-        }
-    }
-
-    func recognizeFile(url: URL) {
-        guard let recognizer = SFSpeechRecognizer(), recognizer.isAvailable else {
-            return
-        }
-
-        let request = SFSpeechURLRecognitionRequest(url: url)
-        recognizer.recognitionTask(with: request) { result, error in
-            guard let result = result else {
-                return
-            }
-            self.transcriptionTextView.text = result.bestTranscription.formattedString
-            if result.isFinal {
-                self.searchFlight(number: result.bestTranscription.formattedString)
-            } else if let error = error {
-                print(error)
-            }
-        }
-    }
+    // TODO
 }
 
 // MARK: - UI Management
@@ -72,16 +34,16 @@ extension ViewController {
 
     func searchFlight(number: String) {
         if let flight = FlightsDataSource.searchFlight(number: number) {
-            transcriptionTextView.text = "\(number)\n\(flight.status)"
+            flightTextView.text = "\(number)\n\(flight.status)"
         } else {
-            transcriptionTextView.text = "No flight \(number) found 😭"
+            flightTextView.text = "No flight \(number) found 😭"
         }
     }
 
     // MARK: IBActions
 
     @IBAction func microphonePressed(_ sender: Any) {
-        recognizeFile(url: preRecordedAudioURL)
+        
     }
 }
 
