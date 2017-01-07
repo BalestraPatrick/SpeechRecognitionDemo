@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var flightTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
 
-    var preRecordedAudioURL: URL = {
-        return Bundle.main.url(forResource: "LX40", withExtension: "m4a")!
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         applyStyle()
