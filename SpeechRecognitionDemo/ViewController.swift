@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 
     // TODO
 
-    @IBAction func microphonePressed(_ sender: Any) {
+    @IBAction func microphonePressed() {
 
     }
 }
