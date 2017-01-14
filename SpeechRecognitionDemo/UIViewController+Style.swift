@@ -14,7 +14,7 @@ enum SpeechStatus {
     case unavailable
 }
 
-// MARK: UI Styling
+// MARK: - UI Styling
 
 extension ViewController {
 
