@@ -38,5 +38,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>fdsfds</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>fdsfdsfds</string>
 </dict>
 </plist>
