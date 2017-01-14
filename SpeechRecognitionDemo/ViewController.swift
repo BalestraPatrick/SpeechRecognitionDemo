@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var flightTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
 
+    var status = SpeechStatus.ready {
+        didSet {
+            self.setUI(status: status)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         applyStyle()
