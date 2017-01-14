@@ -38,5 +38,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>czxcxz</string>
 </dict>
 </plist>
