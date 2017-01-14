@@ -36,6 +36,6 @@ class FlightsDataSource {
     }()
 
     static func searchFlight(number: String) -> Flight? {
-        return flights.filter { $0.number == number }.first
+        return flights.filter { number.contains($0.number) }.first
     }
 }
