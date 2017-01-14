@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         recognitionTask?.cancel()
     }
 
-    @IBAction func microphonePressed(_ sender: Any) {
+    @IBAction func microphonePressed() {
         switch status {
         case .ready:
             startRecording()

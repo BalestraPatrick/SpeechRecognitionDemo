@@ -12,7 +12,6 @@
         <!--Flights Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechRecognitionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -46,7 +45,7 @@ LX40</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="microphonePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yhb-fX-4or"/>
+                                            <action selector="microphonePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="lTD-tV-xmq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -116,6 +115,7 @@ LX40</string>
                         <outlet property="tableView" destination="p9L-U5-DCc" id="5oW-0G-aAw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2420" y="601.34932533733138"/>
         </scene>
