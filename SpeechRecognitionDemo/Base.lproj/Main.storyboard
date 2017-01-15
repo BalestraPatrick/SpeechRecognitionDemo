@@ -24,11 +24,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-lB-7Ko">
                                 <rect key="frame" x="0.0" y="64" width="375" height="120"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8CE-1M-4pI">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Tap the button and say your flight number ✈️" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8CE-1M-4pI">
                                         <rect key="frame" x="150" y="10" width="215" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <string key="text">Tap the button and say your flight number ✈️
-LX40</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
