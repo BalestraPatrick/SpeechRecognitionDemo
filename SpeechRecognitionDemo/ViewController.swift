@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         // Analyze the speech
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             if let result = result {
+                self.flightTextView.text = result.bestTranscription.formattedString
                 self.searchFlight(number: result.bestTranscription.formattedString)
             } else if let error = error {
                 print(error)
