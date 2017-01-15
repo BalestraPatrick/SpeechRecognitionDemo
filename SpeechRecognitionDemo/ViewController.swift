@@ -73,6 +73,7 @@ class ViewController: UIViewController {
             }
         }
     }
+
     @IBAction func microphonePressed(_ sender: Any) {
         recognizeFile(url: preRecordedAudioURL)
     }
