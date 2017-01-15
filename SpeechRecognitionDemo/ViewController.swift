@@ -41,6 +41,7 @@ class ViewController: UIViewController {
 
     }
 
+    /// Ask permission to the user to access their speech data.
     func askSpeechPermission() {
         SFSpeechRecognizer.requestAuthorization { status in
             OperationQueue.main.addOperation {
@@ -54,6 +55,7 @@ class ViewController: UIViewController {
         }
     }
 
+    /// Start streaming the microphone data to the speech recognizer to recognize it live.
     func startRecording() {
         // Setup audio engine and speech recognizer
         guard let node = audioEngine.inputNode else { return }
@@ -82,6 +84,7 @@ class ViewController: UIViewController {
         })
     }
 
+    /// Stops and cancels the speech recognition.
     func cancelRecording() {
         audioEngine.stop()
         if let node = audioEngine.inputNode {
