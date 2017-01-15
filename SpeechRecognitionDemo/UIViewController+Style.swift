@@ -39,8 +39,6 @@ extension ViewController {
     func searchFlight(number: String) {
         if let flight = FlightsDataSource.searchFlight(number: number) {
             flightTextView.text = "\(number)\n\(flight.status)"
-        } else {
-            flightTextView.text = "No flight \(number) found 😭"
         }
     }
 }
